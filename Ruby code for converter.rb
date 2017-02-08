@@ -1,23 +1,29 @@
 print "This is a F-to-C and C-to-F converter. What temperature would you like to convert? "
+prompt = "> "
 string_result = gets.chomp
 number = /\d+/.match(string_result)
 numberi = number[0].to_i
-converter = /[A-Za-z]+/.match(string_result)
 result = Object.new
 
 def result.c2f(c)
-	c * 9.0 / 5 + 32
+	c * 9.0 / 5.0 + 32.0
 end
 
 def result.f2c(f)
-	(f - 32) * 5 / 9.0
+	(f - 32.0) * 5.0 / 9.0
 end
 
-if converter[0].include? "f" 
-	puts "#{numberi} farenheit is equal to #{result.f2c(numberi)} Celsius"
-elsif converter[0].include? "c"
-	puts "#{numberi} celsius is equal to #{result.c2f(numberi)} Farenheit"
-else 
-	puts "Please enter a temperature either in celsius or in farenheit"
+
+while converter = converter = /[A-Za-z]+/.match(string_result)
+	if converter[0].include? "f" 
+	  puts "#{numberi} farenheit is equal to #{result.f2c(numberi)} Celsius"
+	break
+	elsif converter[0].include? "c"
+	  puts "#{numberi} celsius is equal to #{result.c2f(numberi)} Farenheit"
+	break
+	else 
+	  puts "Please enter a temperature either in celsius or in farenheit"
+	  print prompt
+	end
 end
 
