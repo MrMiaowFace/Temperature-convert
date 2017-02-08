@@ -14,11 +14,11 @@ def result.f2c(f)
 end
 
 
-while converter = converter = /[A-Za-z]+/.match(string_result)
-	if converter[0].include? "f" 
+while converter = /[A-Za-z]+/.match(string_result)
+	if converter[0].include? "f" || "F"
 	  puts "#{numberi} farenheit is equal to #{result.f2c(numberi)} Celsius"
 	break
-	elsif converter[0].include? "c"
+	elsif converter[0].include? "c" || "C"
 	  puts "#{numberi} celsius is equal to #{result.c2f(numberi)} Farenheit"
 	break
 	else 
