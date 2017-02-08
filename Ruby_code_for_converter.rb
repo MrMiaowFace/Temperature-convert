@@ -1,7 +1,7 @@
 print "This is a F-to-C and C-to-F converter. What temperature would you like to convert? "
 prompt = "> "
 string_result = gets.chomp
-number = /\d+/.match(string_result)
+number = /\d+/.match(string_result) #finds temperature
 numberi = number[0].to_i
 result = Object.new
 
@@ -14,7 +14,7 @@ def result.f2c(f)
 end
 
 
-while converter = /[A-Za-z]+/.match(string_result)
+while converter = /[A-Za-z]+/.match(string_result) #finds string and loop makes sure either f or c is chosen
 	if converter[0].include? "f" || "F"
 	  puts "#{numberi} farenheit is equal to #{result.f2c(numberi)} Celsius"
 	break
